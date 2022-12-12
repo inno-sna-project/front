@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
         <div class="col-md-7 mrgnbtm">
-        <h2>Create User</h2>
+        <h2>Drop Student</h2>
             <form>
                 <div class="row">
                     <div class="form-group col-md-6">
@@ -20,7 +20,13 @@
                         <input type="text" class="form-control" v-model="email" name="email" id="email" aria-describedby="emailHelp" placeholder="Email" />
                     </div>
                 </div>
-                <button type="button" @click='createUser()' class="btn btn-danger">Create</button>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label htmlFor="exampleInputEmail1">Why do you want to drop this student?</label>
+                        <input type="text" class="form-control" v-model="email" name="personal email" id="email" aria-describedby="emailHelp" placeholder="Reason to drop" />
+                    </div>
+                </div>
+                <button type="button" @click='createUser()' class="btn btn-danger">Drop</button>
             </form>
         </div>
     </div>

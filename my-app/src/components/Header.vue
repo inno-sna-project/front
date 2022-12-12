@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        Vue.js With NodeJS
+        IU. Drop the student!
     </div>
 </template>
 

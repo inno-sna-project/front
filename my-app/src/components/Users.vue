@@ -1,10 +1,10 @@
 <template>
     <div class="container">
-        <h2>Users</h2>
+        <h2>Dropped students</h2>
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>User Id</th>
+                <th>Student Id</th>
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Email</th>
