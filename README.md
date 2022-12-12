@@ -1,2 +1,4 @@
-# vuejs-nodejs-example
-Example Project to demonstrate how to use Vue.js with nodejs backend
+# front drop student
+To configure front read README at my-app (front)
+
+api folder for simple backend imitation
