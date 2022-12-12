@@ -15,6 +15,7 @@ steps:
     commands:
       - sleep 20 # give docker enough time to start
       - echo $DOCKER_PASSWORD | docker login --username snaprojectuser --password-stdin
+      - docker pull snaproject/snap:latest # pull latest image for optimal caching
       - DOCKER_BUILDKIT=1 docker build -t snaprojectuser/front:latest .
       - docker push --all-tags snaprojectuser/front
 
