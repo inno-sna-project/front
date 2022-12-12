@@ -22,7 +22,7 @@ steps:
     image: appleboy/drone-ssh
     settings:
       host:
-        - 45.137.190.96
+        # - 45.137.190.96  # machine is down
         - 45.137.190.92
       username: root
       port: 22
