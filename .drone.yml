@@ -13,7 +13,7 @@ steps:
       DOCKER_PASSWORD:
         from_secret: docker_password
     commands:
-      - sleep 10 # give docker enough time to start
+      - sleep 20 # give docker enough time to start
       - echo $DOCKER_PASSWORD | docker login --username snaprojectuser --password-stdin
       - DOCKER_BUILDKIT=1 docker build -t snaprojectuser/front:latest .
       - docker push --all-tags snaprojectuser/front
