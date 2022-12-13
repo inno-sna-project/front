@@ -6,9 +6,9 @@ type: docker
 steps:
   - name: build
     image: plugins/docker
+    environment:
+      - DOCKER_BUILDKIT: 1
     settings:
-      environment:
-        - DOCKER_BUILDKIT: 1
       username: snaprojectuser
       password:
         from_secret: docker_password
