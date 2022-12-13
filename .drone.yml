@@ -5,19 +5,16 @@ type: docker
 
 steps:
   - name: build
-    image: docker:dind
-    volumes:
-      - name: dockersock
-        path: /var/run
-    environment:
-      DOCKER_PASSWORD:
+    image: plugins/docker
+    settings:
+      username: snaprojectuser
+      password:
         from_secret: docker_password
-    commands:
-      - sleep 20 # give docker enough time to start
-      - echo $DOCKER_PASSWORD | docker login --username snaprojectuser --password-stdin
-      - docker pull snaprojectuser/front:latest # pull latest image for optimal caching
-      - DOCKER_BUILDKIT=1 docker build -t snaprojectuser/front:latest .
-      - docker push --all-tags snaprojectuser/front
+      repo: snaprojectuser/front
+      tags: latest
+      cache_from:
+        - snaprojectuser/front:latest
+      dry_run: true
 
   - name: deploy
     image: appleboy/drone-ssh
@@ -35,19 +32,6 @@ steps:
         - docker rm front
         - docker run -d --name front -p 80:3070 snaprojectuser/front:latest
         - docker ps
-
-
-services:
-  - name: docker
-    image: docker:dind
-    privileged: true
-    volumes:
-      - name: dockersock
-        path: /var/run
-
-volumes:
-  - name: dockersock
-    temp: {}
 
 trigger:
   branch:
