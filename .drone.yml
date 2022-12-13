@@ -15,8 +15,8 @@ steps:
         - "${DRONE_BRANCH}"
         - "${DRONE_BRANCH}-${DRONE_COMMIT}"
       cache_from:
-        - "snaprojectuser/front:latest:master"
-        - "snaprojectuser/front:latest:${DRONE_BRANCH}"
+        - "snaprojectuser/front:master"
+        - "snaprojectuser/front:${DRONE_BRANCH}"
       dry_run: false
 
   - name: deploy
