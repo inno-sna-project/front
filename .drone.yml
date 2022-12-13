@@ -7,6 +7,8 @@ steps:
   - name: build
     image: plugins/docker
     settings:
+      environment:
+        - DOCKER_BUILDKIT: 1
       username: snaprojectuser
       password:
         from_secret: docker_password
@@ -30,10 +32,10 @@ steps:
       key:
           from_secret: ssh_key
       script:
-        - docker pull snaprojectuser/front:latest
+        - docker pull snaprojectuser/front:master
         - docker stop front
         - docker rm front
-        - docker run -d --name front -p 80:3070 snaprojectuser/front:latest
+        - docker run -d --name front -p 80:3070 snaprojectuser/front:master
         - docker ps
 
 trigger:
