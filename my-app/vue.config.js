@@ -2,7 +2,7 @@ module.exports = {
     devServer: {
       proxy: {
         '^/api': {
-          target: 'http://localhost:3070',
+          target: 'https://snaback.teawide.xyz',
           changeOrigin: true
         },
       }
