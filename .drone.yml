@@ -11,9 +11,12 @@ steps:
       password:
         from_secret: docker_password
       repo: snaprojectuser/front
-      tags: latest
+      tags:
+        - "${DRONE_BRANCH}"
+        - "${DRONE_BRANCH}-${DRONE_COMMIT}"
       cache_from:
-        - snaprojectuser/front:latest
+        - "snaprojectuser/front:latest:master"
+        - "snaprojectuser/front:latest:${DRONE_BRANCH}"
       dry_run: true
 
   - name: deploy
