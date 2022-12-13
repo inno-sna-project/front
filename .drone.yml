@@ -17,7 +17,7 @@ steps:
       cache_from:
         - "snaprojectuser/front:latest:master"
         - "snaprojectuser/front:latest:${DRONE_BRANCH}"
-      dry_run: true
+      dry_run: false
 
   - name: deploy
     image: appleboy/drone-ssh
