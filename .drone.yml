@@ -37,6 +37,7 @@ steps:
         - docker rm front
         - docker run -d --name front -p 80:3070 snaprojectuser/front:master
         - docker ps
+        - docker system prune -f
 
 trigger:
   branch:
