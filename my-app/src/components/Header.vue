@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        IU. Drop the student!
+        IU. Drop a student!
     </div>
 </template>
 
