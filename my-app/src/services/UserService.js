@@ -12,6 +12,6 @@ export async function createUser(data) {
     axios.defaults.baseURL = 'https://snaback.teawide.xyz';              // dirty hack, nothing to see here
     axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';  // dirty hack, nothing to see here
 
-    const response = await axios.post(`/api/add_dropped_student`, {user: data});
+    const response = await axios.post(`/api/add_dropped_student`, data);
     return response.data;
 }
